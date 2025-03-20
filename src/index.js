@@ -128,8 +128,10 @@ const VerificationInput = forwardRef(
               const val = e.target.value;
               e.target.setSelectionRange(val.length, val.length);
             }}
+            onClick={(e) => {
+              e.setSelectionRange(0, e.value.length)
+            }}
             type={passwordMode ? "password" : inputType}
-            onClick={(e) => { e.setSelectionRange(0, e.value.length) }}
             {...restInputProps}
           />
           {[...Array(length)].map((_, i) => (
